@@ -33,7 +33,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        {/* Header is aware of currentUser state */}
+        <Header currentUser={this.state.currentUser} />
         {/* Switch only render the first match */}
         <Switch>
           <Route exact path='/' component={HomePage} />
