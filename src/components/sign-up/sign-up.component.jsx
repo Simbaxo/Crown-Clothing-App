@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FormInupt from '../form-input/form-input.component'
+import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
 import './sign-up.styles.scss'
@@ -21,7 +21,7 @@ class SignUp extends Component {
 
     const { displayName, email, password, confirmPassword } = this.state
 
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       alert("password don't match")
       return
     }
@@ -57,10 +57,10 @@ class SignUp extends Component {
     const { displayName, email, password, confirmPassword } = this.state
     return (
       <div className='sign-up'>
-        <div className='title'>I do not have a account</div>
+        <h2 className='title'>I do not have a account</h2>
         <span>Sign up with your email and password</span>
         <form className='sign-up-form' onSubmit={this.handleSubmit}>
-          <FormInupt
+          <FormInput
             type='text'
             name='displayName'
             value={displayName}
@@ -68,7 +68,7 @@ class SignUp extends Component {
             label='Display Name'
             required
           />
-          <FormInupt
+          <FormInput
             type='email'
             name='email'
             value={email}
@@ -76,7 +76,7 @@ class SignUp extends Component {
             label='email'
             required
           />
-          <FormInupt
+          <FormInput
             type='password'
             name='password'
             value={password}
@@ -84,9 +84,9 @@ class SignUp extends Component {
             label='password'
             required
           />
-          <FormInupt
+          <FormInput
             type='password'
-            name='confirm password'
+            name='confirmPassword'
             value={confirmPassword}
             onChange={this.handleChange}
             label='Confirm Password'
